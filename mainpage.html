@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant Esports Database</title>
+    <link rel="stylesheet" href="/css/mainstyle.css">
+</head>
+<body>
+    <h1>Valorant Esports Database</h1>
+    <form id='search-player-form' action='/search' method='get' class='form-styles'>
+        <legend>Look up a Valorant Player</legend>
+        <input class='userinput' type='text' name='playername' placeholder='Player Name Here'>
+        <input class = 'button' type='submit' value='Submit'>
+    </form> <br><br>
+
+    <form id='add-player-form' action='/add' method='post' class='form-styles'>
+        <legend>Add any Valorant Player</legend>
+        <input class='userinput' type='text' name='first_name' placeholder='First Name'> <br>
+        <input class='userinput' type='text' name='last_name' placeholder='Last Name'> <br>
+        <input class='userinput' type='text' name='ign' placeholder='In Game Name'> <br>
+        <input class='userinput' type='text' name='team_name' placeholder='Team Name'> <br>
+        <label>Currently Active</label>
+        <input type='radio' name='cur_active' value='T'> <label>True</label>
+        <input type='radio' name='cur_active' value='F'> <label>False</label> <br>
+        <input class='userinput' type='text' name='years_active' placeholder='Years Active'> <br>
+        <input class='userinput' type='text' name='start_date' placeholder='YYYY-MM-DD'> <br>
+        <input class='userinput' type='text' name='end_date' placeholder="YYYY-MM-DD"> <br>
+        <input class = 'button' type='submit' value='Submit'>
+    </form>
+
+</body>
+</html>
