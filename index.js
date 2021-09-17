@@ -39,7 +39,17 @@ val_db.get('/search', function(req, res){
 
 val_db.post('/add', function (req, res) {
     console.log(req.body);
-    res.send(`<h1>${req.body.first_name} "${req.body.ign}" ${req.body.last_name} was added to the Valorant Player Database</h1>`);
+    let add_player_states = `INSERT INTO player VALUES('${req.body.first_name}', '${req.body.last_name}', '${req.body.ign}', '${req.body.team_name}', '${req.body.cur_active}', ${req.body.years_active}, '${req.body.start_date}', ${req.body.end_date}, NULL)`;
+    res.send(
+        `<h1>${req.body.first_name} "${req.body.ign}" ${req.body.last_name} was added to the Valorant Player Database</h1>
+        <form id='back-to-search' action="/" method="get">
+            <input type="submit" value="Back to Search">
+        </form>`
+        );
+    valorant_player_db.query(add_player_states, function(err, result){
+        if(err) throw err;
+        console.log(result);
+    })
   })
 
 
